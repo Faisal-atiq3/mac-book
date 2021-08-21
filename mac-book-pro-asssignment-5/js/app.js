@@ -1,12 +1,9 @@
-//  Function call
-function calculateMacPrice(macMemorySelect, macDeliverySelect) {
+//function call
+function calctMacMemoryPrice(macMemorySelect) {
     
-    let memoryPrice = document.getElementById("memoryPrice");
+    //Memory And Price Event 
+    let memoryPrice = document.getElementById("memoryPrice"); 
 
-
-
-
-    // If ELse Statements
     if (macMemorySelect == true) {
 
         memoryPrice.innerText = 180; 
@@ -23,13 +20,16 @@ function calculateMacPrice(macMemorySelect, macDeliverySelect) {
     }
 
 }
-//funtion call 
-function calculateMacPrice2(macStorageSelect) {
 
-    
+function calctMAcStoragePrice(macStorageSelect) {
+
+    //Storage Price 
     let storagePriceTag = document.getElementById("storagePrice");
-   
-    // Mac Storage Selection
+    
+
+
+
+    //Check The Mac Storage
     if (macStorageSelect == true) {
         storagePriceTag.innerText = 180; 
 
@@ -49,9 +49,9 @@ function calculateMacPrice2(macStorageSelect) {
     }
 }
 
-function calculateMacPrice3(macDeliverySelect) {
+function calctMacDeliveryCharge(macDeliverySelect) {
 
-    //Get Storage 
+    // Storage Price 
     let deliveryPriceTag = document.getElementById("deliveryPrice");
     
 
@@ -70,63 +70,69 @@ function calculateMacPrice3(macDeliverySelect) {
     }
 }
 
+
+
+
+//Extend Memory Button And Event Listener 
 let extendMemoryButton = document.getElementById("extendMemory"); 
 
-
-
+//Event Listener Button
 extendMemoryButton.addEventListener('click', function() {
-    calculateMacPrice(true);
+    calctMacMemoryPrice(true);
 });
 
 
-//Default Memory And Price Event
+//Memory And Price Event
 let defaultMemoryButton = document.getElementById("defaultMemory"); 
 
-// Event Listener  Button
+//Event Listener Button
 defaultMemoryButton.addEventListener('click', function() {
-    calculateMacPrice(false);
+    calctMacMemoryPrice(false);
 });
 
+
+
+//Extend Storage Button Event Apply And Handle
 let extendMoreStorageBtn = document.getElementById("extendMoreStorage"); 
 
-// Event Listener  Button
+//Event Listener Button
 extendMoreStorageBtn.addEventListener('click', function() {
-    calculateMacPrice2(true);
+    calctMAcStoragePrice(true);
 });
 
 
+//Extend Storage Button Event Apply And Handle
+let extendStorageBtn = document.getElementById("extendStorage"); //Get The Extend Storage Button
 
-let extendStorageBtn = document.getElementById("extendStorage"); 
-
-//Apply Event Listener On This Button
-
+//Event Listener Button
 extendStorageBtn.addEventListener('click', function() {
-    calculateMacPrice2(false);
+    calctMAcStoragePrice(false);
 });
 
-
+// Storage Button Event Apply Handle
 let defaultStorageBtn = document.getElementById("defaultStorage"); 
-// Event Listener On This Button
+
+//Event Listener Button
 defaultStorageBtn.addEventListener('click', function() {
-    calculateMacPrice2();
+    calctMAcStoragePrice();
 });
-
-
+// Delivery Charge Button Event Apply And Handle
 let paidDeliveryBtn = document.getElementById("paidDelivery"); 
 
-
+//Event Listener On This Button
 paidDeliveryBtn.addEventListener('click', function() {
-    calculateMacPrice3(true);
+    calctMacDeliveryCharge(true);
 });
 
 // Delivery Free Button Event Apply And Handle
 let defaultDeliveryBtn = document.getElementById("defaultDelivery"); 
 
-// Event Listener On This Button
+//Event Listener On This Button
 defaultDeliveryBtn.addEventListener('click', function() {
-    calculateMacPrice3(false);
+    calctMacDeliveryCharge(false);
 });
 
+//All Total Prices And SubTotal Value
 function finalTotalPrice() {
 
     let besttotal = document.getElementById("subtotalPrice").innerText;
@@ -136,69 +142,67 @@ function finalTotalPrice() {
 
     let convtTotalPrice = (parseInt(besttotal) + parseInt(memoryPrice) + parseInt(storagePrice) + parseInt(deliveryPrice)); 
 
-    let subtotalPrice = document.getElementById("totalPrice"); Tag
+    let subtotalPrice = document.getElementById("totalPrice"); 
     subtotalPrice.innerText = convtTotalPrice; 
 
     
-    // Bonus Part
-    
-
+    // Bonus Part 
     //Get The Grand Total Tag
     let grandTotalPrice = document.getElementById("grandTotalPrice");
-
     grandTotalPrice.innerText = subtotalPrice.innerText; 
 
 }
 
-//Using The Promo Code Discount 20%
+//Discount 20% Using The Promo Code
 
-// Let's Apply Event Listener On The Promo Code Apply Button
+//Event Listener On Promo Code Apply Button
 let promoCodeApplyBtn = document.getElementById("applyPromoCodeBtn");
 promoCodeApplyBtn.addEventListener("click", function() {
 
-    //Peomo Code 
+    // The Peomo Code 
+
     let promoCode = "stevekaku" 
 
-    //Input the promo code
+    // Input The Promo Code
     let promoCodeInput = document.getElementById("promoCodeInput");
     let promoCodeInputValue = promoCodeInput.value.toLowerCase();
     if (promoCodeInputValue == promoCode) {
 
-        //Discount percentage
+        //Discount Percentage
         let discountPrcntge = 20;
         let subtotalPrice = document.getElementById("totalPrice"); 
         subtotalPrice = subtotalPrice.innerText; 
 
-        // Discount amount
+        // Discount Amount
         let discountAmount = (subtotalPrice / 100) * 20;
-        subtotalPrice = subtotalPrice - discountAmount; 
-        // Grand Total 
+        subtotalPrice = subtotalPrice - discountAmount;  
+        //Get The Grand Total Tag
         let grandTotalPrice = document.getElementById("grandTotalPrice");
         grandTotalPrice.innerText = subtotalPrice; 
         promoCodeInput.value = " ";
 
-        //Success messge
-        let sccMessg = document.getElementById("successAlert");  Tag
-        sccMessg.innerText = "Wow, You Get $" + discountAmount.toFixed(2) + " Discount!";
+        //Success Messge
+        let sccMessg = document.getElementById("successAlert"); 
+        sccMessg.innerText = "You Get $" + discountAmount.toFixed(2) + " Discount!";
 
     } else if (promoCodeInputValue == "") {
 
 
-        alert("Your Promo Code Input Is Empty!");
+        alert("Promo Code Is Empty!");
 
-        let sccMessg = document.getElementById("successAlert"); Tag
+        let sccMessg = document.getElementById("successAlert"); 
         sccMessg.innerText = " ";
     } else if (promoCodeInputValue != promoCode) {
 
 
-        alert("Sorry Wrong Promo Code!");
-        // Clear The Promo Code Field
+        alert("Promo Code Did Not Matched!");
+        //Clear The Promo Code Field
         promoCodeInput.value = " ";
         let sccMessg = document.getElementById("successAlert"); 
         sccMessg.innerText = " ";
     } else {
-        alert("You Have Already Been Applied!");
-        //Clear
+        alert("You Already Applied This Promo Code!");
+        //The Promo Code Field
         promoCodeInput.value = " ";
         let sccMessg = document.getElementById("successAlert"); 
         sccMessg.innerText = " ";
