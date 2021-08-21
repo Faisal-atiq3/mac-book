@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mac Book Pro</title>
+    <!-- Boostrap Linkup -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+    <!-- Site Content Html Mark Up Starts From Here -->
+
+    <section>
+        <main>
+            <div class="container">
+                <div class="row my-5">
+                    <!--  Image File---->
+                    <div class="col-lg-5 col-md-6 col-sm-12">
+                        <img src="images/mac.png" alt="" class="img-fluid">
+                    </div>
+                    <!-- Customize BLog -->
+                    <div class="col-lg-7 col-md-6 col-sm-12 pl-5">
+                        <h1>Customize your Blue 24-inch <br> iMac with Apple M1 chip</h1>
+                        <p>The Apple M1 chip gives the 13‑inch MacBook Pro speed and power beyond belief. With up to 2.8x CPU performance. Up to 5x the graphics speed. Our most advanced Neural Engine for up to 11x faster machine learning. And up to 20 hours
+                            of battery life — the longest of any Mac ever. It’s our most popular pro notebook, taken to a whole new level.</p><br><br><br>
+                        <h4>Memory</h4>
+                        <button id="defaultMemory" class="btn btn-secondary">8GB Unified Memory</button>
+                        <button id="extendMemory" class="btn btn-primary">16GB Unified Memory</button><br><br><br>
+
+
+                        <h4>Storage</h4>
+                        <button id="defaultStorage" class="btn btn-secondary ">256GB SSD Storage</button>
+                        <button id="extendStorage" class="btn btn-primary">512GB SSD Storage</button>
+                        <button id="extendMoreStorage" class="btn btn-primary">1TB SSD Storage</button><br><br><br>
+
+                        <h4>Choose Your Delivery Option</h4>
+                        <button id="defaultDelivery" class="btn btn-secondary">General Delivery</button>
+                        <button id="paidDelivery" class="btn btn-primary">Emergency Delivery</button><br><br><br><br><br>
+                        
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4> <b>Best Price</b></h4>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4>$<span id="subtotalPrice">1299</span></h4>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <!-- Extra Memory Cost -->
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4>Extra Memory Cost</h4>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4>$<span id="memoryPrice">0</span></h4>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <!-- Extra Storage  -->
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4>Extra Storage Cost</h4>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4>$<span id="storagePrice">0</span></h4>
+                            </div>
+                        </div>
+                        <hr>
+
+
+                        <!-- Delivery Charge  -->
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4>Delivery Cost</h4>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4>$<span id="deliveryPrice">0</span></h4>
+                            </div>
+                        </div>
+                        <hr style="color:black; height: 3px;">
+
+
+                        <!--Total Price  -->
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4> <b>Total Price</b></h4>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h4>$<span id="totalPrice">1299</span></h4>
+                            </div>
+                        </div><br><br>
+
+                        <!--Promo Code Area-->
+                        <div class="row">
+
+                            <div class="col-lg-12 col-md-12 col-sm-10">
+                                <h4>Apply Promo Code</h4>
+                                <span id="successAlert" class="text-success fs-5"></span><br>
+                                <input id="promoCodeInput" type="text" placeholder="Apply Your Promo Code" class="p-2" style="border: 1px solid #ddd; border-radius: 3px; outline: none;">
+                                <button id="applyPromoCodeBtn" class="btn btn-danger">Apply</button>
+                            </div>
+                        </div>
+
+                        
+
+
+                    </div>
+                    
+                </div>
+                <hr style="color: black; height: 2px;">
+                <div class="grandTotalPriceArea text-center mb-5">
+                    <h3>Payable Amount : $<span id="grandTotalPrice">1299</span></h3>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    
+
+    <!-- Custom JS Link Up Here -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>
