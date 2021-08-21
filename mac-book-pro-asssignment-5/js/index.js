@@ -134,20 +134,19 @@ function finalTotalPrice() {
     let storagePrice = document.getElementById("storagePrice").innerText;
     let deliveryPrice = document.getElementById("deliveryPrice").innerText;
 
-    let convtTotalPrice = (parseInt(besttotal) + parseInt(memoryPrice) + parseInt(storagePrice) + parseInt(deliveryPrice)); //Convert All Of Prices From String To Intiger
+    let convtTotalPrice = (parseInt(besttotal) + parseInt(memoryPrice) + parseInt(storagePrice) + parseInt(deliveryPrice)); 
 
-    let subtotalPrice = document.getElementById("totalPrice"); //Get The SubTotal Price Tag
-    subtotalPrice.innerText = convtTotalPrice; //Set Sub Total Price
+    let subtotalPrice = document.getElementById("totalPrice"); Tag
+    subtotalPrice.innerText = convtTotalPrice; 
 
-    //****************************************************************
-    //Let's Make Bonus Part For Getting Bonus Marks
-    //****************************************************************	
+    
+    // Bonus Part
+    
 
-    //***********Dynamic Grand Total In Footer************
     //Get The Grand Total Tag
     let grandTotalPrice = document.getElementById("grandTotalPrice");
 
-    grandTotalPrice.innerText = subtotalPrice.innerText; //Set The Grand Total Price Of The MAC 
+    grandTotalPrice.innerText = subtotalPrice.innerText; 
 
 }
 
